@@ -14,9 +14,18 @@
  *= require_self
  */
 
- @import 'bulma';
+@import 'bulma';
 
- .notification {
+.navbar.box {
+  border-radius: 0;
+  padding: 0.25rem;
+}
+
+.index.section {
+  padding: 6.5rem 1.5rem;
+}
+
+.notification {
   border-radius: 0;
 }
 
