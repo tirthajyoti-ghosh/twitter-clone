@@ -22,11 +22,15 @@
 }
 
 .index.section {
-  padding: 6.5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .notification {
   border-radius: 0;
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 0;
 }
 
 .image {
