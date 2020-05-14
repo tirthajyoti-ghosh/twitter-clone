@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -37,47 +37,18 @@
       </div>
 
       <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item">
-            Home
-          </a>
-
-          <a class="navbar-item">
-            Documentation
-          </a>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              More
-            </a>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item">
-                About
-              </a>
-              <a class="navbar-item">
-                Jobs
-              </a>
-              <a class="navbar-item">
-                Contact
-              </a>
-              <hr class="navbar-divider">
-              <a class="navbar-item">
-                Report an issue
-              </a>
-            </div>
-          </div>
-        </div>
-
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <%= link_to new_tweet_path, class: 'button is-primary' do %>
+              <%= link_to user_signed_in? ? root_path : new_tweet_path, class: 'button is-primary' do %>
                 <strong>New Tweet</strong>
               <% end %>
               <% if user_signed_in? %>
+                <%= link_to current_user.name, edit_user_registration_path, class: 'button is-light' %>
+
                 <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'button is-light' %>
               <% else %>
+                <%= link_to "Sign In", new_user_session_path, class: 'button is-light' %>
                 <%= link_to "Sign Up", new_user_registration_path, class: 'button is-light' %>
               <% end %>
             </div>
