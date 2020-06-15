@@ -17,7 +17,7 @@
       <article class="media">
         <div class="media-left">
           <figure class="image is-64x64">
-            <%= image_tag("https://source.unsplash.com/collection/1127173/800x800") %>
+            <%= gravatar_image_tag(tweet.user.email, alt: tweet.user.name) %>
           </figure>
         </div>
         <div class="media-content">
